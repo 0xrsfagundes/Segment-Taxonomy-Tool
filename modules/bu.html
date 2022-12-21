@@ -1,0 +1,53 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta property="og:title" content=" firebase example ">
+  <meta property="og:type" content="website">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Country </title>
+  <meta name="description" content=" firebase example ">
+  <meta name="author" content="tutorial and example">
+  <meta property="og:description" content=" firebase example ">
+  <meta property="og:image" content="image.png">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <style>
+  </style>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src = "https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-firestore.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <div class="row">
+          <p class="h1">Business Unit</p>
+        </div>
+        <div class="row">
+          <form id="form" class="form-inline">
+            <label for="Country"> BU: </label>
+            <input type="text" id="BU" required /> 
+            <button type="submit" name="Add" id="add" value="add" class="btn">Add BU</button>
+          </form>
+        </div>
+        <div class="row">  
+            <div id="output"></div>
+
+            <table class="table table-striped" >
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>BU</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                </tbody>
+              </table>
+        </div>
+      </div> 
+   
+<script src="../js/firebaseconfig.js"></script>
+<script src="../js/core.js"> </script>
+<script src="../js/bu.js"> </script> 
+</body>
+</html>
