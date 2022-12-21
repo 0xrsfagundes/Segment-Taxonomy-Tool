@@ -36,8 +36,13 @@
             </td>\
             </tr>\
             `);
+
+           countryField.append(new Option(data.country,doc.id)); 
+           buField.append(new Option(data.BU,doc.id)); 
+
         });
     });
+
       } catch ( e ) {
         console.error( "Error adding document: " , e ) ;
       }
