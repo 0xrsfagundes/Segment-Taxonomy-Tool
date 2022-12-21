@@ -1,7 +1,9 @@
 
   const form = document.querySelector( "#form" );
   const countryField = document.querySelector( "#country" );
-  const docRef = db.collection( "country" ) ;
+
+  const collection = "country";
+  const docRef = db.collection( collection ) ;
 
 
   /** PAGE LOAD*/
@@ -37,7 +39,7 @@
       
         var dataObject = { country: countryField.value };
 
-        addRecord("country", dataObject).then( ( ) => {
+        addRecord(collection, dataObject).then( ( ) => {
             countryField.style.display = "none" ;
             form.style.display = "none" ;
           document.querySelector('label').style.display = "none" ;
@@ -55,7 +57,7 @@
   $('table').on('click', '#delete', function() {
     var rowEl = $(this).closest('tr');
     var id = rowEl.find('.id').text();
-    deleteRecord("country", id).then( () => {
+    deleteRecord(collection, id).then( () => {
         location.reload();
     }); 
   });
@@ -82,6 +84,6 @@
     $("#update"+id).html('Edit');
     $("#update"+id).addClass('edit').removeClass('update');
     $("#update"+id).prop('id', 'edit'+id);
-    updateRecord("country", id, name);
+    updateRecord(collection, id, name);
   });
 

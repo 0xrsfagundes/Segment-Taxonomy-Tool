@@ -9,7 +9,8 @@
   const typeField = document.querySelector( "#type" );
   const sourceField = document.querySelector( "#source" );
 
-  const docRef = db.collection( "Segment" ) ;
+  const collection = "Segment";
+  const docRef = db.collection( collection ) ;
 
 
   /** PAGE LOAD*/
@@ -59,7 +60,7 @@
           source: sourceField.value
          };
 
-        addRecord("Segment", dataObject).then( ( ) => {
+        addRecord(collection, dataObject).then( ( ) => {
           buField.style.display = "none" ;
             form.style.display = "none" ;
           document.querySelector('label').style.display = "none" ;
@@ -77,7 +78,7 @@
   $('table').on('click', '#delete', function() {
     var rowEl = $(this).closest('tr');
     var id = rowEl.find('.id').text();
-    deleteRecord("Segment", id).then( () => {
+    deleteRecord(collection, id).then( () => {
         location.reload();
     }); 
   });
@@ -104,6 +105,6 @@
     $("#update"+id).html('Edit');
     $("#update"+id).addClass('edit').removeClass('update');
     $("#update"+id).prop('id', 'edit'+id);
-    updateRecord("Segment", id, name);
+    updateRecord(collection, id, name);
   });
 
