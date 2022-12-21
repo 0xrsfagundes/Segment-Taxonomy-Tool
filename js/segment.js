@@ -1,7 +1,15 @@
 
   const form = document.querySelector( "#form" );
+
+  const objectiveField = document.querySelector( "#objective" );
+  const seedField = document.querySelector( "#seed" );
+  const audienceField = document.querySelector( "#audience" );
+  const countryField = document.querySelector( "#country" );
   const buField = document.querySelector( "#BU" );
-  const docRef = db.collection( "BU" ) ;
+  const typeField = document.querySelector( "#type" );
+  const sourceField = document.querySelector( "#source" );
+
+  const docRef = db.collection( "Segment" ) ;
 
 
   /** PAGE LOAD*/
@@ -14,7 +22,13 @@
             tbody.append(`\
             <tr>\
             <td class="id">${doc.id}</td>\
-            <td><input type="text" class="form-control" id='${doc.id}' value='${data.bu}' readonly></td>\
+            <td><input type="text" class="form-control" id='${doc.id}' value='${data.objective}' readonly></td>\
+            <td><input type="text" class="form-control" id='${doc.id}' value='${data.seed}' readonly></td>\
+            <td><input type="text" class="form-control" id='${doc.id}' value='${data.audience}' readonly></td>\
+            <td><input type="text" class="form-control" id='${doc.id}' value='${data.country}' readonly></td>\
+            <td><input type="text" class="form-control" id='${doc.id}' value='${data.BU}' readonly></td>\
+            <td><input type="text" class="form-control" id='${doc.id}' value='${data.type}' readonly></td>\
+            <td><input type="text" class="form-control" id='${doc.id}' value='${data.source}' readonly></td>\
             <td>\
             <button class="btn edit" id="edit${doc.id}">Edit</button>\
             <button class="btn" id="delete">Delete</button>\
@@ -35,9 +49,17 @@
     e.preventDefault() ;
     try {
       
-        var dataObject = { bu: buField.value };
+        var dataObject = {
+          objective: objectiveField.value,
+          seed: seedField.value,
+          audience: audienceField.value,
+          country: countryField.value,
+          BU: buField.value,
+          type: typeField.value,
+          source: sourceField.value
+         };
 
-        addRecord("BU", dataObject).then( ( ) => {
+        addRecord("Segment", dataObject).then( ( ) => {
           buField.style.display = "none" ;
             form.style.display = "none" ;
           document.querySelector('label').style.display = "none" ;
@@ -55,7 +77,7 @@
   $('table').on('click', '#delete', function() {
     var rowEl = $(this).closest('tr');
     var id = rowEl.find('.id').text();
-    deleteRecord("BU", id).then( () => {
+    deleteRecord("Segment", id).then( () => {
         location.reload();
     }); 
   });
@@ -82,6 +104,6 @@
     $("#update"+id).html('Edit');
     $("#update"+id).addClass('edit').removeClass('update');
     $("#update"+id).prop('id', 'edit'+id);
-    updateRecord("BU", id, name);
+    updateRecord("Segment", id, name);
   });
 

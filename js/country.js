@@ -1,7 +1,6 @@
 
   const form = document.querySelector( "#form" );
   const countryField = document.querySelector( "#country" );
-  const outputDiv = document.querySelector( "#output" );
   const docRef = db.collection( "country" ) ;
 
 
