@@ -1,4 +1,6 @@
-<nav class="navbar navbar-default">
+$(document).ready(function() {
+    $('#header').append(`
+    <nav class="navbar navbar-default">
     <div class="container-fluid">
       <div class="navbar-header">
         <a class="navbar-brand" href="#">Segment Generator</a>
@@ -11,3 +13,5 @@
       </ul>
     </div>
   </nav>
+  `);
+});
