@@ -10,7 +10,7 @@
   const sourceField = document.querySelector( "#source" );
 
   const collection = "Segment";
-  const docRef = db.collection( collection ) ;
+  const docRef = db.collection( collection );
 
 
   /** PAGE LOAD*/
@@ -27,25 +27,39 @@
             <td><input type="text" class="form-control" id='${doc.id}' value='${data.seed}' readonly></td>\
             <td><input type="text" class="form-control" id='${doc.id}' value='${data.audience}' readonly></td>\
             <td><input type="text" class="form-control" id='${doc.id}' value='${data.country}' readonly></td>\
-            <td><input type="text" class="form-control" id='${doc.id}' value='${data.BU}' readonly></td>\
+            <td><input type="text" class="form-control" id='${doc.id}' value='${data.bu}' readonly></td>\
             <td><input type="text" class="form-control" id='${doc.id}' value='${data.type}' readonly></td>\
             <td><input type="text" class="form-control" id='${doc.id}' value='${data.source}' readonly></td>\
+            <td><input type="text" class="form-control" id='${doc.id}' value='${data.segmentName}' readonly></td>\
             <td>\
             <button class="btn edit" id="edit${doc.id}">Edit</button>\
             <button class="btn" id="delete">Delete</button>\
             </td>\
             </tr>\
             `);
-
-           countryField.append(new Option(data.country,doc.id)); 
-           buField.append(new Option(data.BU,doc.id)); 
-
         });
     });
 
       } catch ( e ) {
         console.error( "Error adding document: " , e ) ;
       }
+
+
+      const docRef1 = db.collection( "country" );
+      docRef1.get( ).then( ( querySnapshot ) => {
+        querySnapshot.forEach( ( doc ) => {
+          let data = doc.data( );
+          countryField.append(new Option(data.country,doc.id)); 
+        });
+      });
+
+      const docRef2 = db.collection( "BU" );
+      docRef2.get( ).then( ( querySnapshot ) => {
+        querySnapshot.forEach( ( doc ) => {
+          let data = doc.data( );
+          buField.append(new Option(data.bu,doc.id)); 
+        });
+      });
 
   });
 
@@ -54,20 +68,23 @@
   form.addEventListener( "submit" , ( e ) => {
     e.preventDefault() ;
     try {
-      
-        var dataObject = {
+
+      var strSegmentName = [objectiveField.value, seedField.value,audienceField.value,countryField.value,buField.value,typeField.value,sourceField.value].join('_');
+        
+        var dataObject = { 
           objective: objectiveField.value,
           seed: seedField.value,
           audience: audienceField.value,
           country: countryField.value,
-          BU: buField.value,
+          bu: buField.value,
           type: typeField.value,
-          source: sourceField.value
+          source: sourceField.value,
+          segmentName: strSegmentName
          };
 
         addRecord(collection, dataObject).then( ( ) => {
           buField.style.display = "none" ;
-            form.style.display = "none" ;
+          form.style.display = "none" ;
           document.querySelector('label').style.display = "none" ;
           document.querySelector('form').style.display = "none" ;
           location.reload();
