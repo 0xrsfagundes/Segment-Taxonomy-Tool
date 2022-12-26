@@ -23,13 +23,7 @@
             tbody.append(`\
             <tr>\
             <td class="id">${doc.id}</td>\
-            <!--<td><input type="text" class="form-control" id='${doc.id}' value='${data.objective}' readonly></td>\
-            <td><input type="text" class="form-control" id='${doc.id}' value='${data.seed}' readonly></td>\
-            <td><input type="text" class="form-control" id='${doc.id}' value='${data.audience}' readonly></td>\
-            <td><input type="text" class="form-control" id='${doc.id}' value='${data.country}' readonly></td>\
-            <td><input type="text" class="form-control" id='${doc.id}' value='${data.bu}' readonly></td>\
-            <td><input type="text" class="form-control" id='${doc.id}' value='${data.type}' readonly></td>\
-            <td><input type="text" class="form-control" id='${doc.id}' value='${data.source}' readonly></td>\-->
+
             <td><input type="text" class="form-control" id='${doc.id}' value='${data.segmentName}' readonly></td>\
             <td>\
             <button class="btn edit" id="edit${doc.id}">Edit</button>\
