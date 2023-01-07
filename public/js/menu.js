@@ -1,16 +1,31 @@
 $(document).ready(function() {
     $('#menu').append(`
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="#">Segment Generator</a>
+      <a class="navbar-brand" href="#">Audience COE</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="audience.html">Audience Builder</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Admin
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="segment.html">Segment</a></li>
+              <li><a class="dropdown-item" href="bu.html">Business Unit</a></li>
+              <li><a class="dropdown-item" href="country.html">Country</a></li>
+            </ul>
+          </li>
+        </ul>
       </div>
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="index.html">Home</a></li>
-        <li><a href="segment.html">Segment</a></li>
-        <li><a href="bu.html">Business Unit</a></li>
-        <li><a href="country.html">Country</a></li>
-      </ul>
     </div>
   </nav>
   `);
