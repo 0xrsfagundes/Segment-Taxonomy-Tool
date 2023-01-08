@@ -10,91 +10,56 @@
   <meta property="og:description" content=" firebase example ">
   <meta property="og:image" content="image.png">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="../css/audience.css">
+  <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
   <div id="menu"></div>
 
-  <div class="container">
-
+<div class="container">
 <!---->
-<h1 class="text-center fs-4">Audience Builder Tool</h1>
-    <form id="signUpForm" action="#!">
-        <!-- start step indicators -->
-        <div class="form-header d-flex mb-4">
-            <span class="stepIndicator">Step1</span>
-            <span class="stepIndicator">Step2</span>
-            <span class="stepIndicator">Step3</span>
-            <span class="stepIndicator">Step4</span>
-        </div>
-        <!-- end step indicators -->
-    
-        <!-- step 1 -->
-        <div class="step">
-            <p class="text-center mb-4">Audience Objective</p>
-            <div class="mb-3">
-                <input type="email" placeholder="Email Address" oninput="this.className = ''" name="email">
-            </div>
-            <div class="mb-3">
-                <input type="password" placeholder="Password" oninput="this.className = ''" name="password">
-            </div>
-            <div class="mb-3">
-                <input type="password" placeholder="Confirm Password" oninput="this.className = ''" name="password">
-            </div>
-        </div>
-    
-        <!-- step 2 -->
-        <div class="step">
-            <p class="text-center mb-4">Seed Information</p>
-            <div class="mb-3">
-                <input type="text" placeholder="Linked In" oninput="this.className = ''" name="linkedin">
-            </div>
-            <div class="mb-3">
-                <input type="text" placeholder="Twitter" oninput="this.className = ''" name="twitter">
-            </div>
-            <div class="mb-3">
-                <input type="text" placeholder="Facebook" oninput="this.className = ''" name="facebook">
-            </div>
-        </div>
-    
-        <!-- step 3 -->
-        <div class="step">
-            <p class="text-center mb-4">Audience Composition</p>
-            <div class="mb-3">
-                <input type="text" placeholder="Full name" oninput="this.className = ''" name="fullname">
-            </div>
-            <div class="mb-3">
-                <input type="text" placeholder="Mobile" oninput="this.className = ''" name="mobile">
-            </div>
-            <div class="mb-3">
-                <input type="text" placeholder="Address" oninput="this.className = ''" name="address">
-            </div>
-        </div>
+<h1 class="text-center fs-4">Audience Builder</h1>
 
-        <!-- step 4 -->
-        <div class="step">
-          <p class="text-center mb-4">Country</p>
-          <div class="mb-3">
-              <input type="text" placeholder="Full name" oninput="this.className = ''" name="lala">
-          </div>
-          <div class="mb-3">
-              <input type="text" placeholder="Mobile" oninput="this.className = ''" name="assa">
-          </div>
-          <div class="mb-3">
-              <input type="text" placeholder="Address" oninput="this.className = ''" name="adasadress">
-          </div>
+<form id="form">
+  <!-- Nav tabs -->
+
+ 
+
+  <!-- Tab panes -->
+    <div class="tab-content" id="nav-tabContent">
+      <!-- Step 1 content -->
+      <div class="tab-pane active" id="step1">
+        <!--Step Content-->
+        <div class="mb-3"><span>What is the Audience objective?</span></div>
+        <div class="mb-3"><input type="text" id="test1" placeholder="Business Unit" required /></div>          
+        <!-- Previous/Next buttons -->
+        <button type="button" class="btn btn-primary" id="next-button-1">Next</button>
       </div>
-    
-        <!-- start previous / next buttons -->
-        <div class="form-footer d-flex">
-            <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
-            <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
-        </div>
-        <!-- end previous / next buttons -->
-    </form>
+
+      <!-- Step 2 content -->
+      <div class="tab-pane" id="step2" role="tabpanel">
+        <!--Step Content-->
+        <div class="mb-3"><span>What is the Seed Information?</span></div>
+        <div class="mb-3"><input type="text" id="test2" placeholder="Business Unit" required /></div>
+        <!-- Previous/Next buttons -->
+        <button type="button" class="btn btn-secondary" id="prev-button-2">Previous</button>
+        <button type="button" class="btn btn-primary" id="next-button-2">Next</button>
+      </div>
+
+      <!-- Step 3 content -->
+      <div class="tab-pane" id="step3" role="tabpanel">
+        <!--Step Content-->
+        <div class="mb-3"><span>What is the Audience Composition?</span></div>
+        <div class="mb-3"><input type="text" id="test3" placeholder="Business Unit" required /></div>
+        <!-- Previous/Next buttons -->
+        <button type="button" class="btn btn-secondary" id="prev-button-3">Previous</button>
+        <button type="submit" class="btn btn-primary" id="submit">Create</button>
+      </div>
+    </div>
+
+</form>
 <!---->
 
-  </div>
+</div>
 
   <!--SCRIPTS-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

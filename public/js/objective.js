@@ -1,16 +1,9 @@
 
   const form = document.querySelector( "#form" );
+  const txtObjective = document.querySelector( "#txtObjective" );
 
-  const objectiveField = document.querySelector( "#objective" );
-  const seedField = document.querySelector( "#seed" );
-  const audienceField = document.querySelector( "#audience" );
-  const countryField = document.querySelector( "#country" );
-  const buField = document.querySelector( "#BU" );
-  const typeField = document.querySelector( "#type" );
-  const sourceField = document.querySelector( "#source" );
-
-  const collection = "Segment";
-  const docRef = db.collection( collection );
+  const collection = "objective";
+  const docRef = db.collection( collection ) ;
 
 
   /** PAGE LOAD*/
@@ -23,8 +16,7 @@
             tbody.append(`\
             <tr>\
             <td class="id">${doc.id}</td>\
-
-            <td><input type="text" class="form-control" id='${doc.id}' value='${data.segmentName}' readonly></td>\
+            <td><input type="text" class="form-control" id='${doc.id}' value='${data.objective}' readonly></td>\
             <td>\
             <button class="btn edit" id="edit${doc.id}">Edit</button>\
             <button class="btn" id="delete">Delete</button>\
@@ -33,27 +25,9 @@
             `);
         });
     });
-
       } catch ( e ) {
         console.error( "Error adding document: " , e ) ;
       }
-
-
-      const docRef1 = db.collection( "country" );
-      docRef1.get( ).then( ( querySnapshot ) => {
-        querySnapshot.forEach( ( doc ) => {
-          let data = doc.data( );
-          countryField.append(new Option(data.country,doc.id)); 
-        });
-      });
-
-      const docRef2 = db.collection( "BU" );
-      docRef2.get( ).then( ( querySnapshot ) => {
-        querySnapshot.forEach( ( doc ) => {
-          let data = doc.data( );
-          buField.append(new Option(data.bu,doc.id)); 
-        });
-      });
 
   });
 
@@ -62,25 +36,10 @@
   form.addEventListener( "submit" , ( e ) => {
     e.preventDefault() ;
     try {
-
-      var strSegmentName = [objectiveField.value, seedField.value,audienceField.value,countryField.value,buField.value,typeField.value,sourceField.value].join('_');
-        
-        var dataObject = { 
-          objective: objectiveField.value,
-          seed: seedField.value,
-          audience: audienceField.value,
-          country: countryField.value,
-          bu: buField.value,
-          type: typeField.value,
-          source: sourceField.value,
-          segmentName: strSegmentName
-         };
+      
+        var dataObject = { objective: txtObjective.value };
 
         addRecord(collection, dataObject).then( ( ) => {
-          buField.style.display = "none" ;
-          form.style.display = "none" ;
-          document.querySelector('label').style.display = "none" ;
-          document.querySelector('form').style.display = "none" ;
           location.reload();
         } ) ;
 

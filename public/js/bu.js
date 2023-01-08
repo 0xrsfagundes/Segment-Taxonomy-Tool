@@ -2,7 +2,7 @@
   const form = document.querySelector( "#form" );
   const buField = document.querySelector( "#BU" );
 
-  const collection = "BU";
+  const collection = "bu";
   const docRef = db.collection( collection ) ;
 
 
