@@ -21,6 +21,7 @@ $(document).ready(function() {
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="objective.html">Objective</a></li>
               <li><a class="dropdown-item" href="bu.html">Business Unit</a></li>
+              <li><a class="dropdown-item" href="region.html">Region</a></li>
               <li><a class="dropdown-item" href="country.html">Country</a></li>
             </ul>
           </li>

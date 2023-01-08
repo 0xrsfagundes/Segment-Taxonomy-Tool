@@ -1,0 +1,56 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta property="og:title" content=" firebase example ">
+  <meta property="og:type" content="website">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Country </title>
+  <meta name="description" content=" firebase example ">
+  <meta name="author" content="tutorial and example">
+  <meta property="og:description" content=" firebase example ">
+  <meta property="og:image" content="image.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div id="menu"></div>
+    <div class="container">
+        <div class="row">
+          <p class="h1">Region</p>
+        </div>
+        <div class="row">
+          <form id="form" class="form-inline">
+            <div class="mb-3">
+            <input type="text" id="txtRegion" required placeholder="Region"/> 
+            <button type="submit" name="Add" id="add" value="add" class="btn btn-primary mb-3">Add</button>
+          </div>
+          </form>
+        </div>
+        <div class="row">  
+
+            <table class="table table-striped" >
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Region</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                </tbody>
+              </table>
+        </div>
+      </div> 
+
+        <!--SCRIPTS-->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-firestore.js"></script> 
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="../js/firebaseconfig.js"></script>
+      <script src="../js/core.js"> </script>
+      <script src="../js/menu.js"> </script>     
+      <script src="../js/region.js"> </script>
+  <!--//SCRIPTS-->
+</body>
+</html>

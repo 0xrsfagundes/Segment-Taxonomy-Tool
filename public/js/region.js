@@ -1,8 +1,8 @@
 
   const form = document.querySelector( "#form" );
-  const countryField = document.querySelector( "#country" );
+  const txtRegion = document.querySelector( "#txtRegion" );
 
-  const collection = "country";
+  const collection = "region";
   const docRef = db.collection( collection ) ;
 
 
@@ -16,7 +16,7 @@
             tbody.append(`\
             <tr>\
             <td class="id">${doc.id}</td>\
-            <td><input type="text" class="form-control" id='${doc.id}' value='${data.country}' readonly></td>\
+            <td><input type="text" class="form-control" id='${doc.id}' value='${data.region}' readonly></td>\
             <td>\
             <button class="btn edit" id="edit${doc.id}">Edit</button>\
             <button class="btn" id="delete">Delete</button>\
@@ -37,13 +37,9 @@
     e.preventDefault() ;
     try {
       
-        var dataObject = { country: countryField.value };
+        var dataObject = { region: txtRegion.value };
 
         addRecord(collection, dataObject).then( ( ) => {
-            countryField.style.display = "none" ;
-            form.style.display = "none" ;
-          document.querySelector('label').style.display = "none" ;
-          document.querySelector('form').style.display = "none" ;
           location.reload();
         } ) ;
 
@@ -84,9 +80,6 @@
     $("#update"+id).html('Edit');
     $("#update"+id).addClass('edit').removeClass('update');
     $("#update"+id).prop('id', 'edit'+id);
-
-    var dataObject = { id: id, country: name };
-
-    updateRecord(collection, dataObject);
+    updateRecord(collection, id, name);
   });
 

@@ -40,10 +40,6 @@
         var dataObject = { bu: buField.value };
 
         addRecord(collection, dataObject).then( ( ) => {
-          buField.style.display = "none" ;
-            form.style.display = "none" ;
-          document.querySelector('label').style.display = "none" ;
-          document.querySelector('form').style.display = "none" ;
           location.reload();
         } ) ;
 
