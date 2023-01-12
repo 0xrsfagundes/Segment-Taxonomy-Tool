@@ -35,20 +35,19 @@ $(document).ready(function() {
   `);
 
 
-
+  /** LOGOUT BUTTON SETUP */
   const logout = document.querySelector( "#btnLogout" );
 
-  /** ADD RECORD */
+  
   logout.addEventListener( "click" , ( e ) => {
     e.preventDefault() ;
     try {
-      
-      console.log( "cliquei aqui");
 
+      console.log("Logged out");
       firebase.auth().signOut().then(() => {
-        window.location="../../public/index.html";
+        window.location="../index.html";
       }).catch((error) => {
-        // An error happened.
+        console.error( "Error adding document: " , e );
       });
 
     } catch ( e ) {
