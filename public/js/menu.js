@@ -25,9 +25,38 @@ $(document).ready(function() {
               <li><a class="dropdown-item" href="country.html">Country</a></li>
             </ul>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" id="btnLogout">Logout</a>
+          </li>
         </ul>
       </div>
     </div>
   </nav>
   `);
+
+
+
+  const logout = document.querySelector( "#btnLogout" );
+
+  /** ADD RECORD */
+  logout.addEventListener( "click" , ( e ) => {
+    e.preventDefault() ;
+    try {
+      
+      console.log( "cliquei aqui");
+
+      firebase.auth().signOut().then(() => {
+        window.location="../../public/index.html";
+      }).catch((error) => {
+        // An error happened.
+      });
+
+    } catch ( e ) {
+      console.error( "Error adding document: " , e );
+    }
+  });
+
+
 });
+
+

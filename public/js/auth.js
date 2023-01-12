@@ -17,3 +17,9 @@ const uiConfig = {
   ],
 };
 ui.start('#firebaseui-auth-container', uiConfig);
+
+
+const isLoggedIn = () => {
+  return auth.currentUser !== null;
+  console.log(isLoggedIn());
+}
