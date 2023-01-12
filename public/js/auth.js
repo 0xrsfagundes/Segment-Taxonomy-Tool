@@ -6,11 +6,11 @@ const uiConfig = {
       return true;
     },
     uiShown() {
-      document.getElementById('loader').style.display = 'none';
+      //document.getElementById('loader').style.display = 'none';
     },
   },
   signInFlow: 'popup',
-  signInSuccessUrl: 'signedIn',
+  signInSuccessUrl: './modules/index.html',
   signInOptions: [
     firebase.auth.EmailAuthProvider.PROVIDER_ID,
     firebase.auth.GoogleAuthProvider.PROVIDER_ID,

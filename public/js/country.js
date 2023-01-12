@@ -3,6 +3,8 @@
   const countryField = document.querySelector( "#country" );
 
   const collection = "country";
+
+  const db = firebase.firestore( );
   const docRef = db.collection( collection ) ;
 
 
@@ -42,8 +44,6 @@
         addRecord(collection, dataObject).then( ( ) => {
             countryField.style.display = "none" ;
             form.style.display = "none" ;
-          document.querySelector('label').style.display = "none" ;
-          document.querySelector('form').style.display = "none" ;
           location.reload();
         } ) ;
 

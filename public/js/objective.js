@@ -3,6 +3,8 @@
   const txtObjective = document.querySelector( "#txtObjective" );
 
   const collection = "objective";
+
+  const db = firebase.firestore( );
   const docRef = db.collection( collection ) ;
 
 

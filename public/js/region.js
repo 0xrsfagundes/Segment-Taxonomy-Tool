@@ -3,6 +3,8 @@
   const txtRegion = document.querySelector( "#txtRegion" );
 
   const collection = "region";
+
+  const db = firebase.firestore( );
   const docRef = db.collection( collection ) ;
 
 

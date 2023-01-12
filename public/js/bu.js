@@ -3,6 +3,8 @@
   const buField = document.querySelector( "#BU" );
 
   const collection = "bu";
+  
+  const db = firebase.firestore( );
   const docRef = db.collection( collection ) ;
 
 

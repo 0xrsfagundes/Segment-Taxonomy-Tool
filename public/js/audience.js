@@ -5,6 +5,8 @@ const test2 = document.querySelector("#test2");
 const test3 = document.querySelector("#test3");
 
 const collection = "audience";
+
+const db = firebase.firestore( );
 const docRef = db.collection( collection ) ;
 
 
